@@ -10,7 +10,7 @@ URL base: <a> https://onlypetz.herokuapp.com/ </a>
 
 # Endpoints
 
-O JSON para utilizar no Insomnia é este aqui -> https://drive.google.com/file/d/19YQ8giNmu3o32VsTGdwJ3Pr-tnl-mS0b/view?usp=sharing
+O JSON para utilizar no Insomnia é este aqui -> https://drive.google.com/file/d/1Gl1fxgjEf-PHnbHPtmIBpP40SUwDbdzC/view?usp=sharing
 Para importar o JSON no Insomnia é só baixar o arquivo. Na palavra "Insomnia" no canto superior esquerdo. Nesse dropdown é só clicar em "Import / Export > Import Data > From File" e selecionar o arquivo que foi feito download.
 
 <br>
