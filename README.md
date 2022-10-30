@@ -4,6 +4,8 @@
 
 Esta é a documentação da fakeAPI utilizada no projeto front-end. A temática do projeto gira em torno de um site de adoções, avisos de animais perdidos e denuncias de maus tratos.
 
+URL base: <a> https://onlypetz.herokuapp.com/ </a>
+
 <br>
 
 # Endpoints
