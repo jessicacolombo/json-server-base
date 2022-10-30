@@ -2,9 +2,30 @@
   "users": [
     {
       "email": "kenzinho@mail.com",
-      "password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",
-      "name": "Kenzinho",
-      "age": 38,
+      "password": "$2a$10$fe9..KCGT8QRPN53jqJ9KeW5GCNafxLxQOTRx5KccRJoCLa1d93Za",
+      "id": 1,
+      "contact": "contato do usuário",
+      "adress": "enderreço do usuário",
+      "preferences": {
+        "temperament": "temperamento do pet",
+        "size": "tamanho do pet",
+        "age": "idade do pet",
+        "type": "cão ou gato",
+        "city": "animal está para adoção onde?"
+      }
+    }
+  ],
+  "pets": [
+    {
+      "userId": "1",
+      "title": "novo nome do pet",
+      "content": "animal busca lar amoroso...",
+      "contact": "novo contato",
+      "temperament": "temperamento do pet",
+      "size": "tamanho do pet",
+      "age": "idade do pet",
+      "type": "cão ou gato",
+      "city": "animal está para adoção onde?",
       "id": 1
     }
   ]
