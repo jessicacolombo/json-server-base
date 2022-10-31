@@ -12,6 +12,7 @@ const rules = auth.rewriter({
   users: 600,
   pets: 664,
   shelters: 664,
+  reports: 660,
 });
 
 app.use(cors());

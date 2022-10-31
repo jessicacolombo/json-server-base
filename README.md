@@ -366,7 +366,7 @@ Resposta:
 <br>
 
 **PATCH** /shelters/:shelterId <br>
-Edita informação da publicação de adoção. shelterId é o identificador do abrigo a ser editado.
+Edita informação da publicação de adoção. shelterId é o identificador do abrigo a ser editado - o usuário precisa ser o dono do recurso para poder editá-lo.
 <br>
 
 Formato da Request - deve conter todas as informações a serem atualizadas:
@@ -395,7 +395,97 @@ Resposta:
 <br>
 
 **DELETE** /shelters/:shelterId <br>
-Deleta a publicação de adoção. shelterId é o identificador do abrigo a ser deletado.
+Deleta a publicação de adoção. shelterId é o identificador do abrigo a ser deletado - o usuário precisa ser o dono do recurso para poder deletá-lo.
+
+Resposta:
+
+```json
+200 OK
+```
+
+## Denúncias
+
+**GET** /reports <br>
+Traz todas as denúncias de maus tratos cadastradas na aplicação.
+
+Resposta:
+
+```json
+200 Ok
+[
+  {
+    "userId": "1",
+	  "title": "denuncia",
+	  "description": "descrição do fato ocorrido",
+	  "adress": "onde aconteceu?",
+    "id": 1
+  },
+];
+```
+
+<br>
+**POST** /reports <br>
+Cadastra uma nova denuncia. <br>
+
+Formato da Request:
+
+```json
+{
+  "userId": "1",
+  "title": "denuncia",
+  "description": "descrição do fato ocorrido",
+  "adress": "onde aconteceu?"
+}
+```
+
+userId deve ser o identificador do usuário logado.
+
+Resposta:
+
+```json
+201 Created
+{
+  "userId": "1",
+  "title": "denuncia",
+	"description": "descrição do fato ocorrido",
+  "adress": "onde aconteceu?",
+  "id": "1"
+}
+```
+
+<br>
+
+**PATCH** /reports/:reportId <br>
+Edita informação da denuncia. reportId é o identificador da denuncia a ser editada - o usuário precisa ser o dono do recurso para poder editá-lo.
+<br>
+
+Formato da Request - deve conter todas as informações a serem atualizadas:
+
+```json
+{
+  "title": "novo titulo da denuncia",
+	"description": "nova descrição do fato ocorrido",
+  ...
+}
+```
+
+Resposta:
+
+```json
+200 OK
+{
+  "userId": "1",
+  "title": "novo titulo da denuncia",
+	"description": "nova descrição do fato ocorrido",
+  ...
+  "id": 1
+}
+```
+
+<br>
+
+**DELETE** /reports/:reportId <br>
+Deleta a denuncia. reportId é o identificador da denuncia a ser editada - o usuário precisa ser o dono do recurso para poder deletá-lo.
 
 Resposta:
 
