@@ -10,7 +10,7 @@ URL base: <a> https://onlypetz.herokuapp.com/ </a>
 
 # Endpoints
 
-O JSON para utilizar no Insomnia é este aqui -> https://drive.google.com/file/d/1Gl1fxgjEf-PHnbHPtmIBpP40SUwDbdzC/view?usp=sharing
+O JSON para utilizar no Insomnia é este aqui -> https://drive.google.com/file/d/10oTxTUMb00Im-Oov_trhI5eQr2VAO1XV/view?usp=sharing
 Para importar o JSON no Insomnia é só baixar o arquivo. Na palavra "Insomnia" no canto superior esquerdo. Nesse dropdown é só clicar em "Import / Export > Import Data > From File" e selecionar o arquivo que foi feito download.
 
 <br>
@@ -21,38 +21,35 @@ Para importar o JSON no Insomnia é só baixar o arquivo. Na palavra "Insomnia" 
 ## Cadastro
 
 **POST** /register <br/>
-**POST** /signup <br/>
-**POST** /users
 
-Formato básico e obrigatório da requisição:
+Formato da requisição:
 
 ```json
 {
   "email": "email@mail.com",
-  "password": "1234"
+  "password": "1234",
+  "shelter": "false"
 }
 ```
 
-<br>
 Resposta:
- 
+
 ```json
 201 Created
 {
-  "accessToken": "xxx.xxx.xxx"
+  "accessToken": "........",
+	"user": {
+		"email": "email@mail.com",
+		"shelter": "false",
+		"id": 1
 }
 ```
 
-Você pode ficar a vontade para adicionar qualquer outra propriedade no corpo do cadastro dos usuários.
-<br>
 <br>
 
 ## Login
 
-**POST** /login <br/>
-**POST** /signin
-
-Qualquer um desses 2 endpoints pode ser usado para realizar login com um dos usuários cadastrados na lista de "Users"
+**POST** /login <br>
 
 Formato da requisição:
 
@@ -73,7 +70,6 @@ Resposta:
 ```
 
 <br>
-<br>
 
 ## Pets
 
@@ -87,52 +83,31 @@ Resposta:
 [
   {
     "userId": "1",
-	  "title": "nome do pet",
-	  "content": "animal busca lar amoroso...",
-	  "contact": "contato",
-	  "temperament": "temperamento do pet",
-	  "size": "tamanho do pet",
-	  "age": "idade do pet",
-	  "type" : "cão ou gato",
-	  "city": "animal está para adoção onde?",
+    "title": "nome do pet",
+    "content": "animal busca lar amoroso...",
+    "contact": "contato",
+    "temperament": "temperamento do pet",
+    "size": "tamanho do pet",
+    "age": "idade do pet",
+    "type" : "cão ou gato",
+    "city": "animal está para adoção onde?",
     "castrated": "é castrado?",
     "vaccinated": "é vacinado?",
     "id": 1
   },
   {
     "userId": "1",
-	  "title": "outro nome do pet",
-	  "content": "outro animal busca lar amoroso...",
-	  "contact": "outro contato",
-	  "temperament": "temperamento do pet",
-	  "size": "tamanho do pet",
-	  "age": "idade do pet",
-	  "type" : "cão ou gato",
-	  "city": "animal está para adoção onde?",
+    "title": "outro nome do pet",
+    "content": "outro animal busca lar amoroso...",
+    "contact": "outro contato",
+    "temperament": "temperamento do pet",
+    "size": "tamanho do pet",
+    "age": "idade do pet",
+    "type" : "cão ou gato",
+    "city": "animal está para adoção onde?",
     "castrated": "é castrado?",
     "vaccinated": "é vacinado?",
     "id": 2
-  },
-];
-```
-
-## Abrigos
-
-**GET** /shelters <br>
-Traz todos os abrigos cadastrados na aplicação
-
-Resposta:
-
-```json
-200 Ok
-[
-  {
-    "userId": "1",
-	  "name": "nome do abrigo",
-	  "description": "descrição das atividades do abrigo",
-	  "contact": "contato",
-	  "adress": "endereço do abrigo",
-    "id": 1
   },
 ];
 ```
@@ -154,50 +129,56 @@ Rotas protegidas. Devem vir acompanhadas de um header com o token da seguinte fo
 
 ## Usuários
 
+**GET** /users <br>
+Retorna todos os usuários (abrigos e normais) cadastrados.
+
+```json
+200 OK
+[
+    {
+      "email": "kenzinho@mail.com",
+      "password": "$2a$10$fe9..KCGT8QRPN53jqJ9KeW5GCNafxLxQOTRx5KccRJoCLa1d93Za",
+      "id": 1,
+      "shelter": "false"
+    },
+    {
+      "email": "teste@mail.com",
+      "password": "$2a$10$8U2fIrtlUHatMYZLdXFsHOCqsglyE3JJRASRiM5DHdcfJTBuOlh1G",
+      "shelter": "false",
+      "id": 2
+    }
+];
+
+```
+
+<br>
+
 **GET** /users/:userId <br>
-Retorna o perfil do usuário logado
+Retorna o perfil do usuário.
 
 Resposta:
 
 ```json
 200 OK
 {
-	"email": "kenzinho@mail.com",
-	"password": "$2a$10$fe9..KCGT8QRPN53jqJ9KeW5GCNafxLxQOTRx5KccRJoCLa1d93Za",
-	"id": 1,
-	"contact": "contato do usuário",
-	"adress": "enderreço do usuário",
-	"preferences": {
-		"temperament": "temperamento do pet",
-		"size": "tamanho do pet",
-		"age": "idade do pet",
-		"type": "cão ou gato",
-		"city": "animal está para adoção onde?"
-	}
-}
-//usuário completo
-
-||
-
-200 OK
-{
   "email": "kenzinho@mail.com",
-	"password": "$2a$10$fe9..KCGT8QRPN53jqJ9KeW5GCNafxLxQOTRx5KccRJoCLa1d93Za",
-	"id": 1,
+  "password": "$2a$10$fe9..KCGT8QRPN53jqJ9KeW5GCNafxLxQOTRx5KccRJoCLa1d93Za",
+  "shelter": "false",
+  "id": 1,
+  ...
 }
-//usuário inicial
-
 ```
 
 <br>
 
-**PATCH** /user <br>
-Edita informação da publicação de adoção. <br>
+**PATCH** /users/:userId <br>
+Edita informação do perfil do usuário. userId deve ser o identificador do usuário logado - o usuário deve ser o dono do recurso para poder editá-lo. <br>
 
 Formato da Request - deve conter todas as informações a serem atualizadas:
 
 ```json
 {
+  "imgProfile": "url ou permitir que faça upload",
   "contact": "contato do usuário",
   "adress": "enderreço do usuário",
   "preferences": {
@@ -209,8 +190,6 @@ Formato da Request - deve conter todas as informações a serem atualizadas:
   }
 }
 ```
-
-userId deve ser o identificador do usuário logado.
 
 Resposta:
 
@@ -235,7 +214,7 @@ Resposta:
 <br>
 
 **DELETE** /users/:userId<br>
-Deleta o perfil do usuário logado
+Deleta o perfil do usuário logado. userId deve ser o identificador do usuário logado - o usuário deve ser o dono do recurso para poder editá-lo. <br>
 
 Resposta:
 
@@ -254,7 +233,6 @@ Formato da Request:
 
 ```json
 {
-  "userId": "1",
   "title": "nome do pet",
   "content": "animal busca lar amoroso...",
   "contact": "contato",
@@ -268,18 +246,16 @@ Formato da Request:
 }
 ```
 
-userId deve ser o identificador do usuário logado.
-
 Resposta:
 
 ```json
 201 Created
 {
   "userId": "1",
-	"title": "nome do pet",
-	"content": "animal busca lar amoroso...",
-	"contact": "contato",
-	"temperament": "temperamento do pet",
+  "title": "nome do pet",
+  "content": "animal busca lar amoroso...",
+  "contact": "contato",
+  "temperament": "temperamento do pet",
   "size": "tamanho do pet",
   "age": "idade do pet",
   "type" : "cão ou gato",
@@ -293,7 +269,7 @@ Resposta:
 <br>
 
 **PATCH** /pets/:postPetId <br>
-Edita informação da publicação de adoção. postPetId é o identificador do post a ser editado.
+Edita informação da publicação de adoção. postPetId é o identificador do post a ser editado - o usuário deve ser o dono do recurso para poder editá-lo. <br>.
 <br>
 
 Formato da Request - deve conter todas as informações a serem atualizadas:
@@ -323,79 +299,6 @@ Resposta:
 
 **DELETE** /pets/:postPetId <br>
 Deleta a publicação de adoção. postPetId é o identificador do post a ser deletado.
-
-Resposta:
-
-```json
-200 OK
-```
-
-## Abrigos
-
-**POST** /shelters <br>
-Cadastra um novo abrigo. <br>
-
-Formato da Request:
-
-```json
-{
-  "userId": "1",
-  "name": "nome do abrigo",
-  "description": "descrição das atividades do abrigo",
-  "contact": "contato",
-  "adress": "endereço do abrigo"
-}
-```
-
-userId deve ser o identificador do usuário logado.
-
-Resposta:
-
-```json
-201 Created
-{
-  "userId": "1",
-  "name": "nome do abrigo",
-  "description": "descrição das atividades do abrigo",
-  "contact": "contato",
-  "adress": "endereço do abrigo",
-  "id": "1"
-}
-```
-
-<br>
-
-**PATCH** /shelters/:shelterId <br>
-Edita informação da publicação de adoção. shelterId é o identificador do abrigo a ser editado - o usuário precisa ser o dono do recurso para poder editá-lo.
-<br>
-
-Formato da Request - deve conter todas as informações a serem atualizadas:
-
-```json
-{
-  "name": "novo nome do abrigo",
-  "description": "nova descrição das atividades do abrigo",
-  ...
-}
-```
-
-Resposta:
-
-```json
-200 OK
-{
-  "userId": "1",
-  "name": "novo nome do abrigo",
-  "description": "nova descrição das atividades do abrigo",
-  ...
-  "id": 1
-}
-```
-
-<br>
-
-**DELETE** /shelters/:shelterId <br>
-Deleta a publicação de adoção. shelterId é o identificador do abrigo a ser deletado - o usuário precisa ser o dono do recurso para poder deletá-lo.
 
 Resposta:
 
@@ -438,7 +341,7 @@ Formato da Request:
 }
 ```
 
-userId deve ser o identificador do usuário logado.
+userId é a identificação do usuário que está criando a denuncia.
 
 Resposta:
 

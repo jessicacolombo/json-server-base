@@ -9,10 +9,9 @@ const router = jsonServer.router("db.json");
 app.db = router.db;
 
 const rules = auth.rewriter({
-  users: 600,
-  pets: 664,
-  shelters: 664,
-  reports: 660,
+  users: 640,
+  pets: 644,
+  reports: 640,
 });
 
 app.use(cors());
@@ -23,4 +22,4 @@ app.listen(port);
 
 console.log("Server is running on port:", port);
 
-/* A senha do Kenzinho é 123456 */
+/* A senha de todos os usurários primários do bd é 123456 */
