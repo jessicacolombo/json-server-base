@@ -95,6 +95,8 @@ Resposta:
 	  "age": "idade do pet",
 	  "type" : "cão ou gato",
 	  "city": "animal está para adoção onde?",
+    "castrated": "é castrado?",
+    "vaccinated": "é vacinado?",
     "id": 1
   },
   {
@@ -107,7 +109,30 @@ Resposta:
 	  "age": "idade do pet",
 	  "type" : "cão ou gato",
 	  "city": "animal está para adoção onde?",
+    "castrated": "é castrado?",
+    "vaccinated": "é vacinado?",
     "id": 2
+  },
+];
+```
+
+## Abrigos
+
+**GET** /shelters <br>
+Traz todos os abrigos cadastrados na aplicação
+
+Resposta:
+
+```json
+200 Ok
+[
+  {
+    "userId": "1",
+	  "name": "nome do abrigo",
+	  "description": "descrição das atividades do abrigo",
+	  "contact": "contato",
+	  "adress": "endereço do abrigo",
+    "id": 1
   },
 ];
 ```
@@ -237,7 +262,9 @@ Formato da Request:
   "size": "tamanho do pet",
   "age": "idade do pet",
   "type": "cão ou gato",
-  "city": "animal está para adoção onde?"
+  "city": "animal está para adoção onde?",
+  "castrated": "é castrado?",
+  "vaccinated": "é vacinado?"
 }
 ```
 
@@ -257,6 +284,8 @@ Resposta:
   "age": "idade do pet",
   "type" : "cão ou gato",
   "city": "animal está para adoção onde?",
+  "castrated": "é castrado?",
+  "vaccinated": "é vacinado?",
   "id": 1
 }
 ```
@@ -294,6 +323,79 @@ Resposta:
 
 **DELETE** /pets/:postPetId <br>
 Deleta a publicação de adoção. postPetId é o identificador do post a ser deletado.
+
+Resposta:
+
+```json
+200 OK
+```
+
+## Abrigos
+
+**POST** /shelters <br>
+Cadastra um novo abrigo. <br>
+
+Formato da Request:
+
+```json
+{
+  "userId": "1",
+  "name": "nome do abrigo",
+  "description": "descrição das atividades do abrigo",
+  "contact": "contato",
+  "adress": "endereço do abrigo"
+}
+```
+
+userId deve ser o identificador do usuário logado.
+
+Resposta:
+
+```json
+201 Created
+{
+  "userId": "1",
+  "name": "nome do abrigo",
+  "description": "descrição das atividades do abrigo",
+  "contact": "contato",
+  "adress": "endereço do abrigo",
+  "id": "1"
+}
+```
+
+<br>
+
+**PATCH** /shelters/:shelterId <br>
+Edita informação da publicação de adoção. shelterId é o identificador do abrigo a ser editado.
+<br>
+
+Formato da Request - deve conter todas as informações a serem atualizadas:
+
+```json
+{
+  "name": "novo nome do abrigo",
+  "description": "nova descrição das atividades do abrigo",
+  ...
+}
+```
+
+Resposta:
+
+```json
+200 OK
+{
+  "userId": "1",
+  "name": "novo nome do abrigo",
+  "description": "nova descrição das atividades do abrigo",
+  ...
+  "id": 1
+}
+```
+
+<br>
+
+**DELETE** /shelters/:shelterId <br>
+Deleta a publicação de adoção. shelterId é o identificador do abrigo a ser deletado.
 
 Resposta:
 
