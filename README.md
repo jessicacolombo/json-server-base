@@ -233,6 +233,7 @@ Formato da Request:
 
 ```json
 {
+  "userId": 1,
   "title": "nome do pet",
   "content": "animal busca lar amoroso...",
   "contact": "contato",
@@ -251,7 +252,7 @@ Resposta:
 ```json
 201 Created
 {
-  "userId": "1",
+  "userId": 1,
   "title": "nome do pet",
   "content": "animal busca lar amoroso...",
   "contact": "contato",
@@ -276,6 +277,7 @@ Formato da Request - deve conter todas as informações a serem atualizadas:
 
 ```json
 {
+  "userId": 3,
   "title": "novo titulo",
   "content": "novo conteúdo do post"
   ...
@@ -287,7 +289,7 @@ Resposta:
 ```json
 200 OK
 {
-  "userId": "3",
+  "userId": 3,
   "title": "novo titulo do post",
   "content": "novo conteúdo do post",
   ...
@@ -334,7 +336,7 @@ Formato da Request:
 
 ```json
 {
-  "userId": "1",
+  "userId": 1,
   "title": "denuncia",
   "description": "descrição do fato ocorrido",
   "adress": "onde aconteceu?"
@@ -348,7 +350,7 @@ Resposta:
 ```json
 201 Created
 {
-  "userId": "1",
+  "userId": 1,
   "title": "denuncia",
 	"description": "descrição do fato ocorrido",
   "adress": "onde aconteceu?",
