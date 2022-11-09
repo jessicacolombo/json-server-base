@@ -12,7 +12,7 @@
       "preferences": {
         "temperament": "tranquilo",
         "size": "pequeno",
-        "age": "10",
+        "age": "idoso",
         "type": "gato",
         "city": "São Paulo"
       }
@@ -29,7 +29,7 @@
       "preferences": {
         "temperament": "tranquilo",
         "size": "grande",
-        "age": "10",
+        "age": "jovem",
         "type": "cachorro",
         "city": "São Paulo"
       }
@@ -46,7 +46,7 @@
       "preferences": {
         "temperament": "agitado",
         "size": "medio",
-        "age": "10",
+        "age": "jovem",
         "type": "cachorro",
         "city": "São Paulo"
       }
@@ -80,7 +80,7 @@
       "contact": "kenzinho@mail.com",
       "temperament": "dócil",
       "size": "pequeno",
-      "age": "8",
+      "age": "adulto",
       "type": "gato",
       "city": "São Paulo",
       "sex": "macho",
@@ -96,7 +96,7 @@
       "contact": "kenzinho@mail.com",
       "temperament": "dócil",
       "size": "médio",
-      "age": "2",
+      "age": "jovem",
       "type": "cão",
       "city": "São Paulo",
       "sex": "macho",
@@ -112,7 +112,7 @@
       "contact": "teste@mail.com",
       "temperament": "dócil",
       "size": "pequeno",
-      "age": "0",
+      "age": "filhote",
       "type": "cão",
       "city": "São Paulo",
       "sex": "fêmea",
@@ -120,6 +120,86 @@
       "vaccinated": "true",
       "img": "https://img.freepik.com/fotos-gratis/cachorro-pequeno-sendo-adoravel-retrato-em-um-estudio_23-2149016948.jpg?w=740&t=st=1667519784~exp=1667520384~hmac=4e5543a58640111efae4b17924c9279dce68956bba5e84269aa66656598a90f3",
       "id": 3
+    },
+    {
+      "userId": "4",
+      "title": "Formiga",
+      "content": "Foi encontrada junto com seus 3 irmãozinhos abandonada em uma caixa, proximo a um lixo. Todos os seus irmão ja foram adotados, mas ela ainda precisa de um lar amoroso!",
+      "contact": "teste@mail.com",
+      "temperament": "dócil",
+      "size": "pequeno",
+      "age": "filhote",
+      "type": "gato",
+      "city": "São Paulo",
+      "sex": "fêmea",
+      "castrated": "false",
+      "vaccinated": "true",
+      "img": "https://img.freepik.com/fotos-gratis/kitty-com-parede-monocromatica-atras-dela_23-2148955134.jpg?w=360&t=st=1668001673~exp=1668002273~hmac=ac8d71a021e9edc1b3b62c8c7d9880de73b4d3d3eec31d45f0d092611639a81f",
+      "id": 4
+    },
+    {
+      "userId": "5",
+      "title": "Minhoca",
+      "content": "Cachorrinho idoso ainda precisa de um lar amoroso!",
+      "contact": "teste@mail.com",
+      "temperament": "dócil",
+      "size": "pequeno",
+      "age": "idoso",
+      "type": "cão",
+      "city": "São Paulo",
+      "sex": "macho",
+      "castrated": "false",
+      "vaccinated": "true",
+      "img": "https://img.freepik.com/fotos-gratis/retrato-de-um-cao-de-raca-bonito-em-um-fundo-escuro-no-estudio_613910-16242.jpg?w=740&t=st=1668001864~exp=1668002464~hmac=1065f5936d2094fa79ca97a74545f3696a15b5d0efc6daa348b3118f51c7e8aa",
+      "id": 5
+    },
+    {
+      "userId": "4",
+      "title": "Gato",
+      "content": "Gatinho amoroso busca lar feliz. O Gato é um filhote muito bonzinho. Foi resgatado de maus tratos e estou oferecendo lar temporário enquanto não encontro um tutor tão especial quanto ele. Ele sabe usar a caixinha, é vacinado e vermifugado.",
+      "contact": "teste@mail.com",
+      "temperament": "dócil",
+      "size": "pequeno",
+      "age": "filhote",
+      "type": "gato",
+      "city": "São Paulo",
+      "sex": "macho",
+      "castrated": "false",
+      "vaccinated": "true",
+      "img": "https://img.freepik.com/fotos-gratis/gato-branco-esta-de-joelhos-de-mulher_8353-539.jpg?w=740&t=st=1668002034~exp=1668002634~hmac=9c9733685f48634eac06ce640bab7b2df82efd1b2914c49184dc92badf62b30e",
+      "id": 6
+    },
+    {
+      "userId": "4",
+      "title": "Bolota",
+      "content": "Cachorrinho amoroso busca lar feliz. O Bolota é um cachorro já mais idoso, mas é muito bonzinho. Foi resgatado de maus tratos e estou oferecendo lar temporário enquanto não encontro um tutor tão especial quanto ele.",
+      "contact": "teste@mail.com",
+      "temperament": "dócil",
+      "size": "grande",
+      "age": "idoso",
+      "type": "cão",
+      "city": "São Paulo",
+      "sex": "macho",
+      "castrated": "false",
+      "vaccinated": "true",
+      "img": "https://img.freepik.com/fotos-premium/retrato-de-cachorro-saindo-da-lingua_23-2148366828.jpg?w=740",
+      "id": 7
+    },
+    {
+      "userId": "2",
+      "title": "Piolha",
+      "content": "Cachorrinha amorosa busca lar feliz. É muito boazinha. Foi resgatada de maus tratos e estou oferecendo lar temporário enquanto não encontro um tutor tão especial quanto ela.",
+      "contact": "teste@mail.com",
+      "temperament": "dócil",
+      "size": "pequena",
+      "age": "jovem",
+      "type": "gato",
+      "city": "São Paulo",
+      "sex": "fêmea",
+      "castrated": "false",
+      "vaccinated": "true",
+      "img": "https://img.freepik.com/fotos-gratis/lindo-retrato-de-gato-de-perto_23-2149152114.jpg?w=740&t=st=1668002031~exp=1668002631~hmac=37ff6f3a0fdbd21e2d15b81730f2a789b9082fa3a367dc8fa228f15be370abf5",
+      "id": 8
     }
   ],
   "reports": [
@@ -127,6 +207,14 @@
       "userId": "1",
       "title": "animais passando fome",
       "description": "o dono saiu de viagem e deixou os animais passando fome na casa sozinhos",
+      "adress": "Rua dos Anjos, 290",
+      "city": "São Paulo",
+      "id": 2
+    },
+    {
+      "userId": "3",
+      "title": "animais apanhando",
+      "description": "o dono bate neles todos os dias, é um absurdo",
       "adress": "Rua dos Anjos, 290",
       "city": "São Paulo",
       "id": 2
